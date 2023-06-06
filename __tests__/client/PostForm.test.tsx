@@ -6,4 +6,9 @@ describe('PostForm', () => {
   test('renders without errors', () => {
     render(<PostForm />);
   });
+  test('has button text', () => {
+    const { getByText } = render(<PostForm />);
+    const buttonElement = getByText('Post your feelings');
+    expect(buttonElement).toBeTruthy();
+  });
 });
