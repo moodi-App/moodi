@@ -5,7 +5,7 @@ export default function RegisterForm(){
   return(
     <div>
       Register for an account here
-      <button onClick={()=> navigate('/')}>Home</button>
+      <button onClick={()=> navigate('/')}>Register</button>
     </div>
   )
 }
