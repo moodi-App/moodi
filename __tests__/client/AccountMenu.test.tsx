@@ -1,16 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import AccountMenu from '../../src/client/components/AccountMenu';
+import '@testing-library/jest-dom';
 
+beforeEach(() => {
+  render(<AccountMenu />);
+});
 describe('AccountMenu', () => {
-  test('renders without errors', () => {
-    render(<AccountMenu />);
+  test('contains avatar and logout button', () => {
+    expect(screen.getByAltText('avatar')).toBeInDocument();
+    expect(screen.getByRole('button')).toHaveTextContent('Logout');
   });
-
-  // test('renders a heading with the correct text', () => {
-  //   const { getByText } = render(<App />);
-  //   const headingElement = getByText('Hello world!');
-  //   expect(headingElement).toBeTruthy();
-  // });
 
 });

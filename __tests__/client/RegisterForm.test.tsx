@@ -9,15 +9,16 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => navigate,
 }));
 
+beforeEach(() => {
+  render(<RegisterForm/>)
+});
+
 describe('RegisterForm', () => {
   test('renders without errors', () => {
-    const registerForm = render(<RegisterForm/>);
-    expect(registerForm.getByRole('button')).toHaveTextContent('Register');
+    expect(screen.getByRole('button')).toHaveTextContent('Register');
   });
 
   test('submits the form with email, username, and password', () => {
-    render(<RegisterForm />);
-
     // grab email, username, and password inputs by id
     const emailInput = screen.getByPlaceholderText("Enter your email");
     const usernameInput = screen.getByPlaceholderText("Enter your username");
