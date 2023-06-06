@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../src/client/components/App';
+import AccountMenu from '../../src/client/components/AccountMenu';
 
-describe('App', () => {
+describe('AccountMenu', () => {
   test('renders without errors', () => {
-    render(<App />);
+    render(<AccountMenu />);
   });
 
   // test('renders a heading with the correct text', () => {

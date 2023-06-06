@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../src/client/components/App';
+import FollowCard from '../../src/client/components/FollowCard';
 
-describe('App', () => {
+describe('FollowCard', () => {
   test('renders without errors', () => {
-    render(<App />);
+    render(<FollowCard />);
   });
 
   // test('renders a heading with the correct text', () => {

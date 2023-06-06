@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../src/client/components/App';
+import Feed from '../../src/client/components/Feed';
 
-describe('App', () => {
+describe('Feed', () => {
   test('renders without errors', () => {
-    render(<App />);
+    render(<Feed />);
   });
 
   // test('renders a heading with the correct text', () => {
