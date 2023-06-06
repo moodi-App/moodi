@@ -32,7 +32,6 @@ describe('Basic Error Handling', () => {
                 .get('/broken');
             expect(log.mock.calls.length).toBe(1);
             jest.clearAllMocks();
-            return;
         })
     })
 });
