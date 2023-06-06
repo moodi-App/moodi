@@ -4,7 +4,6 @@ import LoginForm from "./LoginForm";
 export default function LoginPage(){
   return(
     <div>
-      Login Page here
       <LoginForm/>
       <RegisterForm/>
     </div>

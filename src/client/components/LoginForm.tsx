@@ -8,34 +8,37 @@ export default function LoginForm(){
 
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
-    // add user to db with username and password
+    // check db for username and password
+    navigate('/');
   }
-  
 
   return(
     <div>
       Login to your account
       <form onSubmit={handleSubmit}>
-        <label>
-          username:
-          <input 
-            type="text" 
-            placeholder="enter a username" 
+        <div>
+          <label>
+            <p>Username</p>
+            <input 
+              type="text" 
+              placeholder="Enter your username" 
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}/>
+          </label>
+        </div>
+        <div>
+          <label>
+            <p>Password</p>
+            <input 
+            type="text"
+            placeholder="Enter your password"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setPassword(e.target.value);
             }}/>
-        </label>
-        <label>
-          password:
-          <input 
-          type="text"
-          placeholder="enter a password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}/>
-        </label>
+          </label>
+        </div>
         <button type="submit">Login</button>
-        {/* <button type="submit" onClick={()=> navigate('/')}>Login</button> */}
       </form>
     </div>
   )
