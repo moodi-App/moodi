@@ -8,7 +8,7 @@ beforeEach(() => {
 });
 describe('AccountMenu', () => {
   test('contains avatar and logout button', () => {
-    expect(screen.getByAltText('avatar')).toBeInDocument();
+    expect(screen.getByRole('img')).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveTextContent('Logout');
   });
 
