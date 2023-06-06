@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-export default function RegisterForm(){
+export default function LoginForm(){
   const navigate = useNavigate();
   return(
     <div>
-      Register for an account here
+      Login to your account
       <button onClick={()=> navigate('/')}>Home</button>
     </div>
   )
