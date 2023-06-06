@@ -20,7 +20,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
-    port: 8081,
+    port: 8080,
     static: {
       directory: path.resolve(__dirname, 'client'),
       publicPath : '/',
