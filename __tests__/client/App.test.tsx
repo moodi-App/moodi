@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
+import { App } from '../../src/client/components/App';
 
 describe('App', () => {
   test('renders without errors', () => {
@@ -10,7 +10,7 @@ describe('App', () => {
   test('renders a heading with the correct text', () => {
     const { getByText } = render(<App />);
     const headingElement = getByText('Hello world!');
-    expect(headingElement).toBeInTheDocument();
+    expect(headingElement).toBeTruthy();
   });
 
 });
