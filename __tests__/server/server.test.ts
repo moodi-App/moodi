@@ -25,14 +25,14 @@ describe('Basic Error Handling', () => {
                 .expect('Content-Type', /json/)
                 .expect(500, done);
         });
-        it('logs a server-side error', (done) => {
+        it('logs a server-side error', async () => {
             const log = jest.spyOn(console, 'log');
             expect(log.mock.calls.length).toBe(0);
-            request(app)
+            await request(app)
                 .get('/broken');
             expect(log.mock.calls.length).toBe(1);
             jest.clearAllMocks();
-            return done();
+            return;
         })
     })
 });

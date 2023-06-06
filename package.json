@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "webpack",
-    "start": "NODE_ENV=production ts-node src/server/server.ts",
-    "dev": "NODE_ENV=development webpack serve --open & nodemon src/server/server.ts",
-    "test": "NODE_ENV=test NODE_OPTIONS='--experimental-vm-modules' jest"
+    "start": "export NODE_ENV=production &&ts-node src/server/server.ts",
+    "dev": "export NODE_ENV=development &&webpack serve --open & nodemon src/server/server.ts",
+    "test": "export NODE_ENV=test && NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "repository": {
     "type": "git",
