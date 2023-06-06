@@ -9,6 +9,7 @@ export default function LoginForm(){
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     // check db for username and password
+    // error message if account is not found
     navigate('/');
   }
 
@@ -19,26 +20,26 @@ export default function LoginForm(){
         <div>
           <label>
             <p>Username</p>
-            <input 
+            <input
+              id="login-username"
               type="text" 
               placeholder="Enter your username" 
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}/>
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </label>
         </div>
         <div>
           <label>
             <p>Password</p>
-            <input 
-            type="text"
-            placeholder="Enter your password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}/>
+            <input
+              id="login-password"
+              type="text"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </label>
         </div>
-        <button type="submit">Login</button>
+        <button id="login-button" type="submit">Login</button>
       </form>
     </div>
   )

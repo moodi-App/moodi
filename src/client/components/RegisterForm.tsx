@@ -10,6 +10,7 @@ export default function RegisterForm(){
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     // add user to db with email, username, and password
+    // indicate account was created before navigating to main page?
     navigate('/');
   }
   
@@ -21,36 +22,36 @@ export default function RegisterForm(){
           <label>
             <p>Email</p>
             <input 
-              type="text" 
-              placeholder="Enter your email" 
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}/>
+                id="register-email"
+                type="text" 
+                placeholder="Enter your email" 
+                onChange={(e) => setEmail(e.target.value)}
+              />
           </label>
         </div>
         <div>
           <label>
             <p>Username</p>
-            <input 
+            <input
+              id="register-username"
               type="text" 
               placeholder="Enter your username" 
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}/>
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </label>
         </div>
         <div>
           <label>
             <p>Password</p>
-            <input 
-            type="text"
-            placeholder="Enter your password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}/>
+            <input
+              id="register-password"
+              type="text"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </label>
         </div>
-        <button type="submit">Register</button>
+        <button id="register-button" type="submit">Register</button>
       </form>
     </div>
   )
