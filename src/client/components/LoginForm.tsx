@@ -13,6 +13,8 @@ export default function LoginForm(){
     navigate('/');
   }
 
+  const isFormValid = username !== '' && password !=='';
+
   return(
     <div>
       Login to your account
@@ -39,7 +41,7 @@ export default function LoginForm(){
             />
           </label>
         </div>
-        <button id="login-button" type="submit">Login</button>
+        <button id="login-button" type="submit" disabled={!isFormValid}>Login</button>
       </form>
     </div>
   )

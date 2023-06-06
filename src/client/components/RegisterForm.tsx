@@ -13,6 +13,8 @@ export default function RegisterForm(){
     // indicate account was created before navigating to main page?
     navigate('/');
   }
+
+  const isFormValid = username !== '' && password !=='';
   
   return(
     <div>
@@ -51,7 +53,7 @@ export default function RegisterForm(){
             />
           </label>
         </div>
-        <button id="register-button" type="submit">Register</button>
+        <button id="register-button" type="submit" disabled={!isFormValid}>Register</button>
       </form>
     </div>
   )
