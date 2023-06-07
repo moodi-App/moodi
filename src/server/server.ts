@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'; 
 import path from 'path';
 import process from 'process';
-import apiRouter from './routers/apiRouter'
+import apiRouter from './routers/apiRouter.js'
 
 const app = express();
 

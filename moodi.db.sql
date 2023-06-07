@@ -2,7 +2,7 @@ CREATE TABLE accounts (
   id SERIAL PRIMARY KEY,
   username VARCHAR(30) NOT NULL UNIQUE,
   email VARCHAR(100),
-  password VARCHAR(255) NOT NULL,
+  'password' VARCHAR(255) NOT NULL,
   avatar VARCHAR(255)
 );
 
