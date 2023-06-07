@@ -23,7 +23,7 @@ export default function PostForm(){
         // rows={1}
         // cols={50}
       />
-      <button type="submit">Post your feelings</button>
+      <button type="submit">emote</button>
     </form>
     </div>
     

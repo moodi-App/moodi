@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import './AccountMenu.css';
 export default function AccountMenu(){
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -12,10 +13,12 @@ export default function AccountMenu(){
   // where should logout button redirect to?
   // empty feed and default avatar/name?
   return(
-    <div>
-      <img src={avatar}></img>
-      <p>{username}</p>
-      <button onClick={()=> navigate('/login')}>Logout</button>
+    <div className="account-menu">
+      <div id="acct-info">
+        <img id="avatar" src={avatar}></img>
+        <h3>{username}</h3>
+      </div>
+      <button id="logout" onClick={()=> navigate('/login')}>Logout</button>
     </div>
   )
 }

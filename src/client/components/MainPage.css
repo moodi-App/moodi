@@ -1,0 +1,19 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+}
+
+#heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-heading {
+  margin-bottom: 0px;
+}
+
+#subheading {
+  margin-top: 0px;
+}
