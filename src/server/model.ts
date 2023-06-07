@@ -15,4 +15,3 @@ export const query = (queryString: string, params: string[], callback: (...args:
   console.log("executed query", queryString);
   return pool.query(queryString, params, callback);
 }
-
