@@ -6,8 +6,17 @@
 
 #heading {
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+#headings {
+  width: 80%;
+  align-items: center;
+  text-align: center;
+}
+
+#account-div {
+  width: 20%;
 }
 
 #main-heading {
@@ -16,4 +25,9 @@
 
 #subheading {
   margin-top: 0px;
+}
+
+#main-container {
+  display: flex;
+  justify-content: space-between;
 }

@@ -8,12 +8,18 @@ export default function MainPage(){
   return (
     <div className="main-page">
       <div id="heading">
-        <h1 id="main-heading">moodi</h1>
-        <h4 id="subheading">where moods are mandatory</h4>
+        <div id="headings">
+          <h1 id="main-heading">moodi</h1>
+          <h4 id="subheading">where moods are mandatory</h4>
+        </div>
+        <div id="account-div">
+          <AccountMenu/>
+        </div>
       </div>
-      <AccountMenu/>
-      <Feed/>
-      <FollowList/>
+      <div id="main-container">
+        <Feed/>
+        <FollowList/>
+      </div>  
     </div>
   )
 }

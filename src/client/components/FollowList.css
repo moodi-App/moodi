@@ -1,0 +1,6 @@
+#follow-list {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  align-content: flex-end;
+}

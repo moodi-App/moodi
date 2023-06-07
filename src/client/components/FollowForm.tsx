@@ -12,10 +12,10 @@ export default function FollowForm(){
   }
 
   return(
-    <div>
+    <div id="follow-form">
       Follow Form here
       <form  onSubmit={handleSubmit}>
-        <input ref={target_name} type="text" placeholder="Enter username" name="username"/>
+        <input id="follow-input" ref={target_name} type="text" placeholder="Enter username" name="username"/>
         <button type="submit">ADD</button>
       </form>
     </div>

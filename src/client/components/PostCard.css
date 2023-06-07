@@ -1,5 +1,5 @@
 .post-card {
-  width: 50%;
+  width: 80%;
   display: flex;
   align-items: center;
   border: 1px solid #d5d9d9;
@@ -23,7 +23,7 @@
 
 .post-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 

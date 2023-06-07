@@ -13,12 +13,16 @@ export default function AccountMenu(){
   // where should logout button redirect to?
   // empty feed and default avatar/name?
   return(
-    <div className="account-menu">
+    <div id="account-menu">
       <div id="acct-info">
         <img id="avatar" src={avatar}></img>
-        <h3>{username}</h3>
+        <div id="acct-text">
+          <h3>{username}</h3>
+          <button onClick={()=> navigate('/login')}>Logout</button>
+        </div>
       </div>
-      <button id="logout" onClick={()=> navigate('/login')}>Logout</button>
+      
+      
     </div>
   )
 }
