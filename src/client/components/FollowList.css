@@ -1,0 +1,16 @@
+#follow-list {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  border-color: black;
+  justify-content: space-between;
+}
+
+#follow-list-top {
+  height: 95%;
+}
+
+#followlist-header {
+  text-align: center;
+}

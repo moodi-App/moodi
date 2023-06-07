@@ -1,9 +1,9 @@
 import axios from "axios";
 import { string } from "prop-types";
 
-export const getPostList = async (userID: number): Promise<postData[] | undefined> => {
+export const getPostList = async (username: string): Promise<postData[] | undefined> => {
   try { 
-    const response = await axios.get(`/${userID}`);
+    const response = await axios.get(`/${username}`);
     return response.data;
   }
   catch (err) {
@@ -43,9 +43,9 @@ export const addReaction = async (postID: number) => {
     console.log('Error in addReaction: ', err);
   }
 }
-export const getFollowList = async (userID: number) => {
+export const getFollowList = async (username: string) => {
   try {
-    const response = await axios.get(`/${userID}`);
+    const response = await axios.get(`/${username}`);
     return response.data;
   }
   catch (err) { console.log('Error in getFollowList: ', err);
@@ -91,9 +91,9 @@ export const signIn = async (username: string, password: string) => {
   }
 }
 
-export const signOut = async (userID: number) => {
+export const signOut = async (username: string) => {
   try {
-    const body = {userID};
+    const body = {username};
     const response = await axios.post('/', body);
     return response.data;
   }
@@ -102,3 +102,15 @@ export const signOut = async (userID: number) => {
   }
 }
 
+export const emojiList = [
+  '😄', // Joy
+  '😢', // Sadness
+  '😡', // Anger
+  '😍', // Love
+  '😱', // Fear
+  '😊', // Happiness
+  '😔', // Disappointment
+  '😃', // Excitement
+  '😴', // Sleepiness
+  '😒', // Annoyance
+]; 

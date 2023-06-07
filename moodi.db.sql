@@ -22,3 +22,5 @@ CREATE TABLE follows (
   FOREIGN KEY (follower_id) REFERENCES accounts (id),
   FOREIGN KEY (target_id) REFERENCES accounts (id)
 );
+
+

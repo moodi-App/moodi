@@ -1,5 +1,6 @@
 import React, { useState, FormEvent , useRef} from "react";
 import { addFollow } from "../api";
+import './FollowForm.css'
 
 
 export default function FollowForm(){
@@ -12,11 +13,10 @@ export default function FollowForm(){
   }
 
   return(
-    <div>
-      Follow Form here
-      <form  onSubmit={handleSubmit}>
-        <input ref={target_name} type="text" placeholder="Enter username" name="username"/>
-        <button type="submit">ADD</button>
+    <div>      
+      <form id="follow-form" onSubmit={handleSubmit}>
+        <input id="follow-input" ref={target_name} type="text" placeholder="Enter username" name="username"/>
+        <button id="follow-button" type="submit">add</button>
       </form>
     </div>
   )
