@@ -1,7 +1,8 @@
 import process from 'process';
 import dotenv from 'dotenv';
 dotenv.config();
-import { Pool } from 'pg';
+import pg from 'pg';
+const Pool = pg.Pool;
 
 const PG_URI = process.env.NODE_ENV === 'test'
   ? process.env.PG_TEST_URI

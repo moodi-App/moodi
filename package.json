@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "webpack",
-    "start": "export NODE_ENV=production &&ts-node src/server/server.ts",
-    "dev": "export NODE_ENV=development &&webpack serve --open & nodemon src/server/server.ts",
+    "start": "export NODE_ENV=production NODE_PATH=src &&ts-node src/server/server.ts",
+    "dev": "export NODE_ENV=development NODE_PATH=src &&webpack serve --open & nodemon src/server/server.ts",
     "test": "export NODE_ENV=test && NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "repository": {
@@ -39,10 +39,11 @@
     "postcss-preset-env": "^8.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "supertest": "^6.3.3",
     "react-router-dom": "^6.11.2",
     "style-loader": "^3.3.3",
+    "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
+    "ts-jest-resolver": "^2.0.1",
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
     "webpack": "^5.85.1",

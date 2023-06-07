@@ -35,3 +35,39 @@ describe('Basic Error Handling', () => {
     })
   })
 });
+
+describe('followController', () => {
+  describe('get followed by userId', () => {
+    it('should return list of accounts', async () => {
+      const resp = await request(app)
+        .get('/api/follows/1')
+        .set('Accept', 'application/json')
+      expect(Array.isArray(resp.body)).toBe(true);
+    });
+    it('repeated calls should not edit database', async () => {
+      const resp1 = await request(app)
+        .get('/api/follows/1')
+        .set('Accept', 'application/json')
+      const resp2 = await request(app)
+        .get('/api/follows/1')
+        .set('Accept', 'application/json')
+      expect(resp1.body.length).toEqual(resp2.body.length);
+    })
+  })
+  describe('add follower', () => {
+    it('should return the posted follower', () => {
+    })
+    it('follow should appear in table', () => {
+    })
+    it('adding followers without a matching user or target should return an error', () => {
+    })
+  })
+  describe('unfollow', () => {
+    it('follow should be removed', () => {
+    })
+    it('follow should not delete if follow does not exist', () => {
+    })
+    it('sequential unfollows should not impact table', () => {
+    });
+  });
+});
