@@ -3,7 +3,7 @@ import { string } from "prop-types";
 
 export const getPostList = async (username: string): Promise<postData[] | undefined> => {
   try { 
-    const response = await axios.get(`/${username}`);
+    const response = await axios.get(`/api/${username}`);
     return response.data;
   }
   catch (err) {
@@ -27,13 +27,14 @@ export const addPost = async (body: postFormData) => {
 
 export const deletePost = async (postID: number) => {
   try {
-    const response = await axios.delete('/', {data: {postID}});
+    const response = await axios.delete(`/api/${postID}`);
     return response.data;
   }catch(err) {
     console.log('Error in deletePost: ', err);
   }
 }
 export const addReaction = async (postID: number) => {
+  // doesn't work yet
   try {
     const body = {postID};
     const response = await axios.post('/', body);
@@ -45,7 +46,7 @@ export const addReaction = async (postID: number) => {
 }
 export const getFollowList = async (username: string) => {
   try {
-    const response = await axios.get(`/${username}`);
+    const response = await axios.get(`/api/follows?username=${username}`);
     return response.data;
   }
   catch (err) { console.log('Error in getFollowList: ', err);
@@ -53,7 +54,8 @@ export const getFollowList = async (username: string) => {
 }
 export const addFollow = async (body: followFormData) => {
   try {
-    const response = await axios.post('/', body);
+    const {follower_name, target_name} = body;
+    const response = await axios.post('/api/follows', { follower: follower_name, target: target_name });
     return response.data;
   }
   catch (err) {
@@ -62,13 +64,15 @@ export const addFollow = async (body: followFormData) => {
 }
 export const deleteFollow = async (body: followFormData) => {
   // need to use data option on delete
+  const {follower_name, target_name} = body;
   try {
-    const response = await axios.delete('/', {data: body});
+    const response = await axios.delete(`/api/follows?follower=${follower_name}&target=${target_name}`);
     return response.data;
   } catch (err) {
     console.log('Error in deleteFollow: ', err);
   }
 }
+
 
 export const addUser = async (body: accountFormData) => {
   try {

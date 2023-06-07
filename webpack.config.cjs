@@ -13,6 +13,13 @@ module.exports = {
       directory: path.resolve(__dirname, 'client'),
       publicPath : '/',
     },
+    proxy: {
+      '/api': {
+          target: 'http://localhost:3000',
+          secure: false,
+      },
+    }
+
   },
   module: {
     rules: [
