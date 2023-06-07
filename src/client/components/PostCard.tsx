@@ -8,8 +8,10 @@ export default function PostCard(props: postData){
       <span>{username}</span>
       <img src={user_img}></img>
       <span>{emojiList[emoji]} at intensity {scale}</span>
+      <span>{text}</span>
       <span>{timestamp}</span>
       <span>{reaction} acknowledgements</span>
+
     </div>
   )
 }
