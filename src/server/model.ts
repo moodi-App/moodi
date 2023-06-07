@@ -12,7 +12,7 @@ const pool = new Pool({
   connectionString: PG_URI,
 });
 
-export const query = (queryString: string, params: string[], callback: (...args: any[]) => any): any => {
-  console.log("executed query", queryString);
+export const query = (queryString: string, params: string[], callback?: (...args: any[]) => any): any => {
+//  console.log("executed query", queryString);
   return pool.query(queryString, params, callback);
 }
