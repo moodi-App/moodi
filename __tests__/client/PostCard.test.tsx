@@ -18,9 +18,10 @@ describe('PostCard', () => {
   });
 
 
-  test('renders username and image', () => {
+  test('renders username, image, text', () => {
     render(<PostCard {...props} />);
     expect(screen.getByText('Eric')).toBeInTheDocument();
     expect(screen.getByRole('img')).toBeInTheDocument();
+    expect(screen.getByText('Feeling great')).toBeInTheDocument();
   });
 });
