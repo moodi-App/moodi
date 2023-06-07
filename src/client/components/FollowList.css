@@ -2,5 +2,15 @@
   display: flex;
   flex-direction: column;
   width: 25%;
-  align-content: flex-end;
+  height: 100%;
+  border-color: black;
+  justify-content: space-between;
+}
+
+#follow-list-top {
+  height: 95%;
+}
+
+#followlist-header {
+  text-align: center;
 }

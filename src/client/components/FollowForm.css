@@ -1,7 +1,19 @@
 #follow-form {
-  display: flex
+  display: flex;
+  align-items: center;
 }
 
 #follow-input {
-  width: auto;
+  width: 75%;
+  margin-left: 10px;
+}
+
+#follow-button {
+  width: 20%;
+  margin-right: 10px;
+}
+
+#followlist-header {
+  align-self: center;
+  margin-top: 0;
 }

@@ -1,31 +1,72 @@
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState, useRef, useContext } from "react";
 import './PostForm.css'
+import { UserContext } from "./UserContext";
+import { addPost } from '../api'
 export default function PostForm(){
-  const emojiList = ['😀', '😍', '🎉', '🌟', '🐶', '🍕', '⚽️', '🚀', '🎸', '📚'];
+  const emojiList = [
+    '😄', // Joy
+    '😢', // Sadness
+    '😡', // Anger
+    '😍', // Love
+    '😱', // Fear
+    '😊', // Happiness
+    '😔', // Disappointment
+    '😃', // Excitement
+    '😴', // Sleepiness
+    '😒', // Annoyance
+  ];  
+  
+
+  const [selection, setSelection] = useState(0);
+  const scaleInput = useRef(null);
+  const textInput = useRef(null)
+  const { username } = useContext(UserContext);
+  
+
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-
+    const body: postFormData = {
+      username, 
+      emoji: selection, 
+      scale: scaleInput.current?.value,
+      text: textInput.current?.value
+    }
+    addPost(body)
+    console.log("adding post with body of", body)
   }
   return(
-    <div id="post-form">
-      <form method="post" onSubmit={handleSubmit}>
-      
-      <input id="emoji-input" list="emojiList"  name="emoji" size={6}/>
-      at intensity
-      <input id="scale" type="number" defaultValue={5} min={1} max={10} />
-      <datalist id="emojiList">
+    <div>
+      <form id="post-form" method="post" onSubmit={handleSubmit}>
+      {/* <datalist id="emojiList">
         {emojiList.map((emoji, i) => <option key={`emoji-${i}`} value={emoji}/>)}
-      </datalist>
-      <input
-        id="message-input"
-        name="postContent"
-        placeholder="because of"
-        maxLength = {50}
-        size={50}
-        // rows={1}
-        // cols={50}
-      />
-      <button type="submit">emote</button>
+      </datalist> */}
+      <div id="emoji-buttons">
+        {emojiList.map((emoji, index) => (
+          <button
+            className="emoji-button"
+            key={emoji}
+            onClick={() => setSelection(index)}
+            style={{ backgroundColor: selection === index ? 'yellow' : 'white' }}
+            type="button"
+          >
+            {emoji}
+          </button>
+        ))}
+      </div>
+      <div id="post-inputs">
+        <p>intensity</p>
+        <input ref={scaleInput} id="scale" type="number" defaultValue={5} min={1} max={10} />
+        <input
+          id="message-input"
+          name="postContent"
+          placeholder="because of"
+          maxLength = {50}
+          size={50}
+          ref={textInput}
+        />
+        <button type="submit">emote</button>
+      </div>
     </form>
     </div>
     

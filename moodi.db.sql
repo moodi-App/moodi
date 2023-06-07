@@ -22,3 +22,21 @@ CREATE TABLE follows (
   FOREIGN KEY (follower_id) REFERENCES accounts (id),
   FOREIGN KEY (target_id) REFERENCES accounts (id)
 );
+
+
+
+SELECT target_id
+      FROM public.follows
+      WHERE follower_id = ( SELECT id from public.accounts WHERE username = $1 )
+
+SELECT a.username, a.avatar
+FROM accounts a
+RIGHT JOIN (List of follower ids) b ON a.id = b.target_id
+
+SELECT target_id
+      FROM public.follows
+      WHERE follower_id = ( SELECT id from public.accounts WHERE username = 'Mooder')
+
+SELECT a.* 
+FROM posts a
+INNER JOIN (list of follower ids) b ON a.account_id = b.target_id

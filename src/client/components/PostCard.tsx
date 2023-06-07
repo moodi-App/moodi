@@ -1,7 +1,19 @@
 import React from "react";
 import './PostCard.css'
 export default function PostCard(props: postData){
-  const emojiList = ['😀', '😍', '🎉', '🌟', '🐶', '🍕', '⚽️', '🚀', '🎸', '📚'];
+  const emojiList = [
+    '😄', // Joy
+    '😢', // Sadness
+    '😡', // Anger
+    '😍', // Love
+    '😱', // Fear
+    '😊', // Happiness
+    '😔', // Disappointment
+    '😃', // Excitement
+    '😴', // Sleepiness
+    '😒', // Annoyance
+  ];  
+  
   const {username, user_img, emoji, scale, text, timestamp, reaction} = props
   return(
     <div className="post-card">
@@ -13,9 +25,14 @@ export default function PostCard(props: postData){
         <div className="post-text">
           <span className="emoji">{emojiList[emoji]} x{scale}</span>
           <span>{text}</span>
-          <span>{timestamp}</span>
         </div>
-        <span>{reaction} acknowledgements</span>
+        <div className="stats-div">
+          <span>{timestamp}</span>
+          <div className="reaction-div">
+            <span className="reaction-count">{reaction}</span>
+            <button className="react-button">acknowledge</button>
+          </div>
+        </div>
       </div>
     </div>
   )

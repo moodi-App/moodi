@@ -4,11 +4,15 @@
 :root {
   --border-radius: 8px;
   --font: 'Comic Sans', sans-serif;
+  --background-color: rgb(203, 239, 201);
+  --border: 1px solid #d5d9d9;
 }
 
 /* General styling */
 body{
   font-family: var(--font);
+  background-color: var(--background-color);
+  /* background-image: url("https://img.freepik.com/premium-photo/pastel-color-sea-sky-beautiful-landscape-seaside-background_51012-573.jpg"); */
 }
 
 /* just to see divs */
@@ -22,16 +26,17 @@ input {
   margin: 3px 5px 3px 0px;
   border-radius: var(--border-radius);
   padding: 10px;
-  border: 1px solid #d5d9d9;
+  border: var(--border);
   width: 300px;
 }
 
 button {
   font-family: var(--font);
   border-radius: var(--border-radius);
-  border: 1px solid #d5d9d9;
+  border: var(--border);
   padding: 5px 10px 5px 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 75px;
 }
 

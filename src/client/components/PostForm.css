@@ -1,14 +1,28 @@
 #post-form {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
   overflow: auto;
 }
-#emoji-input {
-  width: 5%;
+
+#post-inputs {
+  display: flex;
 }
 
 #scale {
   width: 5%;
+  margin-left: 5px;
+  font-size: small;
+}
+
+#message-input {
+  font-size: small;
+}
+
+.emoji-button {
+  font-size: xx-large;
+  margin-right: 2px;
+  margin-left: 2px;
 }

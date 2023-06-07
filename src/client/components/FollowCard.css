@@ -1,0 +1,23 @@
+#follow-card {
+  display: flex;
+  width: 99%;
+  height: 10%;
+  align-items: center;
+  justify-content: space-between;
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+#follow-img {
+  height: 50px;
+  width: 50px;
+  margin-left: 10px;
+}
+
+#follow-name {
+  margin-top: 0;
+}
+
+#remove-button {
+  margin-right: 10px;
+}

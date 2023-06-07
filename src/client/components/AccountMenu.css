@@ -4,7 +4,6 @@
   border-radius: 50%;
   border: 1px solid #d5d9d9;
   margin-right: 10px;
-  align-items: center;
 }
 
 #account-menu {
@@ -16,12 +15,18 @@
 #acct-info {
   display: flex;
   flex-direction: row;
-  justify-content: right;
+  justify-content: flex-start;
 }
 
 #acct-text {
   display: flex;
   flex-direction: column;
-  margin: 0;
-  justify-content: space-between;
+}
+
+#username {
+  margin-bottom: 0px;
+}
+
+#logout {
+  margin-top: 5px;
 }
