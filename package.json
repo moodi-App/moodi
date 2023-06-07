@@ -7,7 +7,8 @@
   "scripts": {
     "build": "webpack",
     "start": "export NODE_ENV=production &&ts-node src/server/server.ts",
-    "dev": "export NODE_ENV=development &&webpack serve --open & nodemon src/server/server.ts",
+    "dev": "export NODE_ENV=development && webpack serve --open & nodemon src/server/server.ts",
+    "dev-front": "export NODE_ENV=development && webpack serve --open",
     "test": "export NODE_ENV=test && NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "repository": {
@@ -22,11 +23,13 @@
   "homepage": "https://github.com/moodi-App/moodi#readme",
   "dependencies": {
     "@babel/preset-react": "^7.22.3",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
     "@types/react": "^18.2.8",
     "@types/react-dom": "^18.2.4",
+    "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "css-loader": "^6.8.1",
@@ -36,6 +39,7 @@
     "jsdom": "^22.1.0",
     "nodemon": "^2.0.22",
     "pg": "^8.11.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
@@ -53,6 +57,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/pg": "^8.10.2",
     "dotenv": "^16.1.4",
+    "@testing-library/user-event": "^14.4.3",
     "typescript": "^5.1.3",
     "webpack-dev-server": "^4.15.0"
   }

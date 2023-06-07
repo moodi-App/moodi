@@ -4,6 +4,7 @@ const router = express.Router();
 import * as accountController from '../controllers/accountController.js'
 //import followController from '../controllers/followController'
 
+
 router.post('/accounts', accountController.createUser, (req: Request, res: Response) => {
   console.log('')
   res.status(201).json('Account created');
