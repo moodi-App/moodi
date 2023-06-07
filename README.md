@@ -1,18 +1,25 @@
 # moodi
-moodi is a mood-tracking social app. Feeling down? Feeling up? Tell Mooter and your followers about it.
+moodi is a mood-tracking social app. Feeling down? Feeling up? Tell Mooder and your followers about it.
+
+## Usage
+```bash
+git clone https://github.com/moodi-App/moodi.git  
+cd moodi  
+npm run build  
+npm run start  
+```
 
 ## About
 
+### Features
 
-## Usage
-git clone https://github.com/moodi-App/moodi.git
-cd moodi
-npm run build
-npm run start
+### Tech Stack
 
 ## Contributors
-Dom Chaloesiak | [github](https://github.com/domc13)
-Eric Tjon | [github](https://github.com/ectjon)
-Esther Witbeck | [github](https://github.com/eswitbeck)
-Jonathan Hosea | [github](https://github.com/jhosea92)
-Megan Choi | [github](https://github.com/mgnchoi)
+|                 |                                                  |
+| --------------  |  ----------------------------------------------  |
+| Dom Chaloesiak  | &nbsp;[@domc13](https://github.com/domc13)       |
+| Eric Tjon       | &nbsp;[@ectjon](https://github.com/ectjon)       |
+| Esther Witbeck  | &nbsp;[@eswitbeck](https://github.com/eswitbeck) | 
+| Jonathan Hosea  | &nbsp;[@jhosea92](https://github.com/jhosea92)   |
+| Megan Choi      | &nbsp;[@mgnchoi](https://github.com/mgnchoi)     |
