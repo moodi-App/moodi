@@ -2,4 +2,5 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  resolver: 'ts-jest-resolver'
 };
