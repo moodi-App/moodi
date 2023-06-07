@@ -1,42 +1,39 @@
-
-
-const getPostList = (userID: number): [postData] => {
+export const getPostList = (userID: number): [postData] => {
   // fetch from backend
   return;
 }
 
-const addPost = (data: postFormData) => {
+export const addPost = (data: postFormData) => {
   
 }
-const updatePost = (data: postFormData) => {
+export const updatePost = (data: postFormData) => {
   
 }
-const deletePost = (postID: number) => {
+export const deletePost = (postID: number) => {
   
 }
-const addReaction = (postID: number) => {
+export const addReaction = (postID: number) => {
   
 }
-const getFollowList = (userID: number) => {
+export const getFollowList = (userID: number) => {
   
 }
-const addFollow = (data: followFormData) => {
+export const addFollow = (data: followFormData) => {
   
 }
-const deleteFollow = (data: followFormData) => {
-  
-}
-
-const addUser = (data: accountFormData) => {
-  
-}
-const signIn = (username: string, password: string) => {
-  
-}
-const signOut = (userID: number) => {
+export const deleteFollow = (data: followFormData) => {
   
 }
 
+export const addUser = (data: accountFormData) => {
+  
+}
 
-export default {getPostList, addPost, updatePost, deletePost, addReaction, 
-  getFollowList, addFollow, deleteFollow, addUser, signIn, signOut};
+export const signIn = (username: string, password: string) => {
+  
+}
+
+export const signOut = (userID: number) => {
+  
+}
+
