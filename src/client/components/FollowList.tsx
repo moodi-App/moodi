@@ -1,32 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import FollowCard from "./FollowCard";
 import FollowForm from "./FollowForm";
-import axios from "axios";
+import { getFollowList } from "../api";
 
-export default function FollowList(){
-  const [follows, setFollows] = useState([]);
-
-  const addFollow = (newFollow: string) => {
-    axios.post('https://localhost:3000/endpoint',
-    {
-      username: newFollow
-    }
-    )
-    .then(response => {
-      setFollows(prevFollows => [...prevFollows, response.data]);
-    })
-    .catch(error => {
-      console.error('Error in addFollow: ', error);
-    });
-  };
-
+export default function FollowList() {
+  const [followList, setFollows] = useState<followData[]>([]);
+  useEffect(() => {
+    getFollowList(0)
+      .then((list)=> {
+        if(list) setFollows(list)
+      })
+      
+  },[])
   return(
     <div>
       Follow List
-      {follows.map(follow => (
-        <FollowCard key={follow.id} username={follow.username}/>
+      {followList.map((follow, i) => (
+        <FollowCard key={i} {...follow}/>
       ))}
-      <FollowForm addFollow={addFollow} />
+      <FollowForm/>
     </div>
   )
 }

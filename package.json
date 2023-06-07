@@ -7,7 +7,8 @@
   "scripts": {
     "build": "webpack",
     "start": "export NODE_ENV=production &&ts-node src/server/server.ts",
-    "dev": "export NODE_ENV=development &&webpack serve --open & nodemon src/server/server.ts",
+    "dev": "export NODE_ENV=development && webpack serve --open & nodemon src/server/server.ts",
+    "dev-front": "export NODE_ENV=development && webpack serve --open",
     "test": "export NODE_ENV=test && NODE_OPTIONS='--experimental-vm-modules' jest"
   },
   "repository": {
