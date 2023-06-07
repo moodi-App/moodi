@@ -22,6 +22,7 @@
   "homepage": "https://github.com/moodi-App/moodi#readme",
   "dependencies": {
     "@babel/preset-react": "^7.22.3",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
@@ -36,9 +37,9 @@
     "pg": "^8.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "supertest": "^6.3.3",
     "react-router-dom": "^6.11.2",
     "style-loader": "^3.3.3",
+    "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
