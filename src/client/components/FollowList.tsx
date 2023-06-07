@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import FollowCard from "./FollowCard";
 import FollowForm from "./FollowForm";
-export default function FollowList(){
+import { getFollowList } from "../api";
+
+export default function FollowList() {
+  const [followList, setFollows] = useState<followData[]>([]);
+  useEffect(() => {
+    getFollowList(0)
+      .then((list)=> {
+        if(list) setFollows(list)
+      })
+      
+  },[])
   return(
     <div>
-      Follow List here
-      <FollowCard/>
+      Follow List
+      {followList.map((follow, i) => (
+        <FollowCard key={i} {...follow}/>
+      ))}
       <FollowForm/>
     </div>
   )
