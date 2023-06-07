@@ -29,7 +29,6 @@ export const addReaction = (req: Request, res: Response, next: NextFunction): vo
       next({message: 'Error in addReaction', error: err});
       return;
     };
-    console.log('results: ', results);
     res.locals.update = 'the new reaction count is:';
     return next();
   });
@@ -46,7 +45,6 @@ export const getFeed = (req: Request, res: Response, next: NextFunction): void =
       next({message: 'Error in getFeed', error: err});
       return;
     };
-    console.log('results: ', results.rows);
     res.locals.feed = results.rows;
     return next();
   });
