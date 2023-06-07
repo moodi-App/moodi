@@ -1,19 +1,7 @@
 import React from "react";
-import './PostCard.css'
+import './PostCard.css';
+import { emojiList } from "../api";
 export default function PostCard(props: postData){
-  const emojiList = [
-    '😄', // Joy
-    '😢', // Sadness
-    '😡', // Anger
-    '😍', // Love
-    '😱', // Fear
-    '😊', // Happiness
-    '😔', // Disappointment
-    '😃', // Excitement
-    '😴', // Sleepiness
-    '😒', // Annoyance
-  ];  
-  
   const {username, user_img, emoji, scale, text, timestamp, reaction} = props
   return(
     <div className="post-card">

@@ -1,20 +1,8 @@
 import React, { FormEvent, useState, useRef, useContext } from "react";
 import './PostForm.css'
 import { UserContext } from "./UserContext";
-import { addPost } from '../api'
+import { addPost, emojiList} from '../api'
 export default function PostForm(){
-  const emojiList = [
-    '😄', // Joy
-    '😢', // Sadness
-    '😡', // Anger
-    '😍', // Love
-    '😱', // Fear
-    '😊', // Happiness
-    '😔', // Disappointment
-    '😃', // Excitement
-    '😴', // Sleepiness
-    '😒', // Annoyance
-  ];  
   
 
   const [selection, setSelection] = useState(0);

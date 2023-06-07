@@ -102,3 +102,15 @@ export const signOut = async (username: string) => {
   }
 }
 
+export const emojiList = [
+  '😄', // Joy
+  '😢', // Sadness
+  '😡', // Anger
+  '😍', // Love
+  '😱', // Fear
+  '😊', // Happiness
+  '😔', // Disappointment
+  '😃', // Excitement
+  '😴', // Sleepiness
+  '😒', // Annoyance
+]; 
