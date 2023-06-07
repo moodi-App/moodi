@@ -31,7 +31,7 @@ const globalErrorHandler = (err: Error, req: Request, res: Response, next: NextF
     };
     const error = Object.assign(defaultError, err);
     console.log(error);
-    res.status(500).json(error.message);
+    res.status(error.status).json(error.message);
 }
 
 app.use(globalErrorHandler);

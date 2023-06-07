@@ -9,7 +9,7 @@
     "esModuleInterop": true, 
     "lib": ["dom", "es6"],
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true, 
   },
   "include": ["src/**/*", "env.d.ts"],
   "exclude": ["node_modules"],
