@@ -15,19 +15,19 @@ beforeEach(() => {
 
 describe('LoginForm', () => {
   test('renders without errors', () => {
-    expect(screen.getByRole('button')).toHaveTextContent('Login');
+    expect(screen.getByRole('button')).toHaveTextContent('login');
   });
 
   test("submits the form with username and password", () => {
     // grab username and password inputs by placeholder text
-    const usernameInput = screen.getByPlaceholderText("Enter your username");
-    const passwordInput = screen.getByPlaceholderText("Enter your password");
+    const usernameInput = screen.getByPlaceholderText("enter your username");
+    const passwordInput = screen.getByPlaceholderText("enter your password");
     // input test values by simulating onChange event
     fireEvent.change(usernameInput, { target: { value: "testuser" } });
     fireEvent.change(passwordInput, { target: { value: "testpassword" } });
 
     // submit the form
-    const submitButton = screen.getByText("Login");
+    const submitButton = screen.getByText("login");
     fireEvent.click(submitButton);
 
     // form submission should take user to main page

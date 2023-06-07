@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./LoginForm.css"
 export default function LoginForm(){
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -16,32 +17,34 @@ export default function LoginForm(){
   const isFormValid = username !== '' && password !=='';
 
   return(
-    <div>
-      Login to your account
+    <div className="login-form">
+      <p className = "title">log in to your account</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            <p>Username</p>
+            <p>username</p>
             <input
               id="login-username"
               type="text" 
-              placeholder="Enter your username" 
+              placeholder="enter your username" 
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
         </div>
         <div>
           <label>
-            <p>Password</p>
+            <p>password</p>
             <input
               id="login-password"
               type="text"
-              placeholder="Enter your password"
+              placeholder="enter your password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
         </div>
-        <button id="login-button" type="submit" disabled={!isFormValid}>Login</button>
+        <div className='button-div'>
+          <button id="login-button" type="submit" disabled={!isFormValid}>login</button>
+        </div>
       </form>
     </div>
   )

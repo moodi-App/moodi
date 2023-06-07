@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./RegisterForm.css"
 export default function RegisterForm(){
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -17,43 +18,45 @@ export default function RegisterForm(){
   const isFormValid = username !== '' && password !=='';
   
   return(
-    <div>
-      Register for a new account
+    <div className="register-form">
+      <p className="title">register for a new account</p>
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            <p>Email</p>
+            <p>email</p>
             <input 
                 id="register-email"
                 type="text" 
-                placeholder="Enter your email" 
+                placeholder="enter your email" 
                 onChange={(e) => setEmail(e.target.value)}
               />
           </label>
         </div>
         <div>
           <label>
-            <p>Username</p>
+            <p>username</p>
             <input
               id="register-username"
               type="text" 
-              placeholder="Enter your username" 
+              placeholder="enter your username" 
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
         </div>
         <div>
           <label>
-            <p>Password</p>
+            <p>password</p>
             <input
               id="register-password"
               type="text"
-              placeholder="Enter your password"
+              placeholder="enter your password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
         </div>
-        <button id="register-button" type="submit" disabled={!isFormValid}>Register</button>
+        <div className="button-div">
+          <button id="register-button" type="submit" disabled={!isFormValid}>register</button>
+        </div>
       </form>
     </div>
   )
