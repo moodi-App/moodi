@@ -5,4 +5,5 @@ module.exports = {
   moduleNameMapper: {
     '\\.css$': '../../../__mocks__/styleMock.ts',
   },
+  resolver: 'ts-jest-resolver'
 };
