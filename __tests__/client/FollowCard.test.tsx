@@ -1,16 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../src/client/components/App';
-import { BrowserRouter } from "react-router-dom";
+import FollowCard from '../../src/client/components/FollowCard';
 
-// https://testing-library.com/docs/example-react-router/
-describe('App', () => {
+describe('FollowCard', () => {
   test('renders without errors', () => {
-    render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    );
+    render(<FollowCard />);
   });
 
   // test('renders a heading with the correct text', () => {

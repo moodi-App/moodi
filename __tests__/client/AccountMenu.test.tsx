@@ -1,16 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../src/client/components/App';
-import { BrowserRouter } from "react-router-dom";
+import AccountMenu from '../../src/client/components/AccountMenu';
 
-// https://testing-library.com/docs/example-react-router/
-describe('App', () => {
+describe('AccountMenu', () => {
   test('renders without errors', () => {
-    render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    );
+    render(<AccountMenu />);
   });
 
   // test('renders a heading with the correct text', () => {
