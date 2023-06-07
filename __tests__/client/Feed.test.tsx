@@ -7,10 +7,10 @@ describe('Feed', () => {
     render(<Feed />);
   });
 
-  // test('renders a heading with the correct text', () => {
-  //   const { getByText } = render(<App />);
-  //   const headingElement = getByText('Hello world!');
-  //   expect(headingElement).toBeTruthy();
-  // });
+  test('renders a heading with the correct text', () => {
+    const { getByText } = render(<Feed />);
+    const headingElement = getByText('Feed');
+    expect(headingElement).toBeTruthy();
+  });
 
 });
