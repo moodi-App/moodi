@@ -1,0 +1,70 @@
+.post-card {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d5d9d9;
+  border-radius: var(--border-radius);
+}
+
+.post-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emoji {
+  font-size: xx-large;
+}
+
+.post-text {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+}
+
+.post-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  height: 20%;
+  margin-right: 10px;
+}
+
+.reaction-count {
+  font-size: smaller;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.react-button {
+  width: 100px;
+  font-size: smaller;
+  height: 30px;
+  margin-bottom: 2px;
+}
+
+.reaction-div {
+  display: flex;
+  align-items: center;
+}

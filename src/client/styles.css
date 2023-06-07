@@ -1,29 +1,42 @@
 @import url('https://fonts.cdnfonts.com/css/comic-sans');
 
-body{
-  font-family: 'Comic Sans', sans-serif;
+/* variables */
+:root {
+  --border-radius: 8px;
+  --font: 'Comic Sans', sans-serif;
+  --background-color: rgb(203, 239, 201);
+  --border: 1px solid #d5d9d9;
 }
-/* 
-div {
+
+/* General styling */
+body{
+  font-family: var(--font);
+  background-color: var(--background-color);
+  /* background-image: url("https://img.freepik.com/premium-photo/pastel-color-sea-sky-beautiful-landscape-seaside-background_51012-573.jpg"); */
+}
+
+/* just to see divs */
+/* div {
   border: 1px solid #00a4a4;
 } */
 
 input {
-  font-family: 'Comic Sans', sans-serif;
+  font-family: var(--font);
   font-size: 12px;
   margin: 3px 5px 3px 0px;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   padding: 10px;
-  border: 1px solid #d5d9d9;
+  border: var(--border);
   width: 300px;
 }
 
 button {
-  font-family: 'Comic Sans', sans-serif;
-  border-radius: 8px;
-  border: 1px solid #d5d9d9;
+  font-family: var(--font);
+  border-radius: var(--border-radius);
+  border: var(--border);
   padding: 5px 10px 5px 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
   width: 75px;
 }
 
@@ -32,16 +45,4 @@ button:hover:enabled {
   color: white;
   border: 1px solid white;
   cursor: pointer;
-}
-
-p {
-  margin-bottom: 0px;
-}
-
-.title {
-  font-size: large;
-}
-
-.button-div {
-  text-align: center;
 }

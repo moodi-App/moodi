@@ -1,0 +1,32 @@
+#avatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 1px solid #d5d9d9;
+  margin-right: 10px;
+}
+
+#account-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#acct-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#acct-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#username {
+  margin-bottom: 0px;
+}
+
+#logout {
+  margin-top: 5px;
+}

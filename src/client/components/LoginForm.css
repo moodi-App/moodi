@@ -3,3 +3,15 @@
   align-items: center;
   flex-direction: column;
 }
+
+p {
+  margin-bottom: 0px;
+}
+
+.title {
+  font-size: large;
+}
+
+.button-div {
+  text-align: center;
+}
