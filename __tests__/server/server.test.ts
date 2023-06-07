@@ -123,11 +123,58 @@ describe('followController', () => {
     })
   })
   describe('unfollow', () => {
-    it('follow should be removed', () => {
+    beforeAll(async () => {
+      const createString = `
+        INSERT INTO public.accounts (username, email, password) VALUES ($1, 'testemail', 'password');
+      `;
+      await query(createString,['test1']);
+      await query(createString,['test2']);
+    });
+    beforeEach(async () => {
+      const followString = `
+      INSERT INTO public.follows VALUES (
+        (SELECT id FROM public.accounts WHERE username = 'test1'),
+        (SELECT id FROM public.accounts WHERE username = 'test2')
+      );
+      `;
+      await query(followString, []);
+    });
+    afterEach(async () => {
+      const cleanUpString = `
+        DELETE FROM public.follows WHERE follower_id = (SELECT id FROM public.accounts WHERE username = $1)
+      `;
+      await query(cleanUpString, ['test1']);
+    });
+    afterAll(async () => {
+      const cleanUpString = `
+        DELETE FROM public.accounts WHERE username='test1' OR username='test2';
+      `;
+      await query(cleanUpString, []);
+    });
+    it('follow should be removed', async () => {
+      const selectString = `
+      SELECT * FROM public.follows
+      `;
+      const before = await query(selectString, []);
+      await request(app)
+        .delete('/api/follows?follower=test1&target=test2')
+        .expect(201);
+      const after = await query(selectString, []);
+      expect(before.rows.length).toBe(after.rows.length + 1);
     })
-    it('follow should not delete if follow does not exist', () => {
-    })
-    it('sequential unfollows should not impact table', () => {
+    it('sequential unfollows should not impact table', async () => {
+      const selectString = `
+      SELECT * FROM public.follows
+      `;
+      const first = await query(selectString, []);
+      await request(app)
+        .delete('/api/follows?follower=test1&target=test2')
+      const second = await query(selectString, []);
+      await request(app)
+        .delete('/api/follows?follower=test1&target=test2')
+      const third = await query(selectString, []);
+      expect(first.rows.length).toBe(third.rows.length + 1);
+      expect(second.rows.length).toBe(third.rows.length);
     });
   });
 });

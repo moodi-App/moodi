@@ -46,11 +46,11 @@ export const addFollow = (req: Request, res: Response, next: NextFunction): void
   const follower = req.body.follower as string;
   const target = req.body.target as string;
   if (!follower) {
-    next({ message: 'error in addFollow: no follower provided' });
+    next({ message: 'error in addFollow: no follower provided', status: 400 });
     return;
   }
   if (!target) {
-    next({ message: 'error in addFollow: no target provided' });
+    next({ message: 'error in addFollow: no target provided', status: 400 });
     return;
   }
   const legalCheck = query(isLegalString, [follower, target], (err, data) => {
@@ -66,7 +66,7 @@ export const addFollow = (req: Request, res: Response, next: NextFunction): void
       });
       return;
     } else {
-      const results = query(insertString, [follower, target], (err, data) => {
+      query(insertString, [follower, target], (err, data) => {
         if (err) {
           next ({ message: 'error in addFollow: inserting', err: err });
           return;
@@ -79,3 +79,30 @@ export const addFollow = (req: Request, res: Response, next: NextFunction): void
   });
 };
 
+export const unfollow = (req: Request, res: Response, next: NextFunction): void => {
+  const deleteString = `
+  DELETE FROM public.follows
+  WHERE 
+    follower_id = (SELECT id FROM public.accounts WHERE username = $1) AND
+    target_id =   (SELECT id FROM public.accounts WHERE username = $2);
+ `;
+  const follower = req.query.follower as string;
+  const target = req.query.target as string;
+  if (!follower) {
+    next({ message: 'error in unfollow: no follower provided', status: 400 });
+    return;
+  }
+  if (!target) {
+    next({ message: 'error in unfollow: no target provided', status: 400 });
+    return;
+  }
+  query(deleteString, [follower, target], (err, data) => {
+    if (err) {
+       next({ message: 'error in unfollow: deleting', err: err });
+       return;
+    } else {
+      res.status(201);
+      next();
+    }
+  });
+};
