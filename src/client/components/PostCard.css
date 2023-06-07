@@ -1,0 +1,36 @@
+.post-card {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d5d9d9;
+  border-radius: var(--border-radius);
+}
+
+.post-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.emoji {
+  font-size: xx-large;
+}
+
+.post-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+}

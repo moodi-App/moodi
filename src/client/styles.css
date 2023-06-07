@@ -12,9 +12,9 @@ body{
 }
 
 /* just to see divs */
-div {
+/* div {
   border: 1px solid #00a4a4;
-}
+} */
 
 input {
   font-family: var(--font);

@@ -1,0 +1,13 @@
+#post-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+#emoji-input {
+  width: 5%;
+}
+
+#scale {
+  width: 5%;
+}

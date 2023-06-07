@@ -1,4 +1,5 @@
 import React, { FormEvent } from "react";
+import './PostForm.css'
 export default function PostForm(){
   const emojiList = ['😀', '😍', '🎉', '🌟', '🐶', '🍕', '⚽️', '🚀', '🎸', '📚'];
   function handleSubmit(e: FormEvent) {
@@ -6,16 +7,17 @@ export default function PostForm(){
 
   }
   return(
-    <div>
+    <div id="post-form">
       <form method="post" onSubmit={handleSubmit}>
       
-      <input list="emojiList"  name="emoji" size={6}/>
+      <input id="emoji-input" list="emojiList"  name="emoji" size={6}/>
       at intensity
-      <input type="number" defaultValue={5} min={1} max={10} />
+      <input id="scale" type="number" defaultValue={5} min={1} max={10} />
       <datalist id="emojiList">
         {emojiList.map((emoji, i) => <option key={`emoji-${i}`} value={emoji}/>)}
       </datalist>
       <input
+        id="message-input"
         name="postContent"
         placeholder="because of"
         maxLength = {50}
