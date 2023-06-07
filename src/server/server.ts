@@ -1,10 +1,13 @@
 import express, { Request, Response, NextFunction } from 'express'; 
 import path from 'path';
 import process from 'process';
+import apiRouter from './routers/apiRouter'
 
 const app = express();
 
 app.use(express.json());
+
+app.use('/api', apiRouter);
 
 if (process.env.NODE_ENV === 'test') {
     console.log('process.env.NODE_ENV', process.env.NODE_ENV);
