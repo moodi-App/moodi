@@ -35,8 +35,9 @@ export const addReaction = (req: Request, res: Response, next: NextFunction): vo
 
 export const getFeed = (req: Request, res: Response, next: NextFunction): void => {
 
-  const { username } = req.body;
+  
   console.log('getting feed!')
+  const username = req.query.username as string;
   const queryString: string = 'SELECT a.* FROM posts a INNER JOIN (SELECT target_id FROM public.follows WHERE follower_id = ( SELECT id from public.accounts WHERE username = $1 )) b ON a.account_id = b.target_id;';
 
   query(queryString, [username], (err: Error, results: any) =>{

@@ -24,7 +24,7 @@ export default function Feed(){
       .then((list) =>{
         if(list) setPosts(list)
       })
-  })
+  }, [])
   
   return(
     <div id="feed">

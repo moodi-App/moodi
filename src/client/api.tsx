@@ -3,7 +3,9 @@ import { string } from "prop-types";
 
 export const getPostList = async (username: string): Promise<postData[] | undefined> => {
   try { 
-    const response = await axios.get(`/api/${username}`);
+    console.log('querying post list')
+    const response = await axios.get(`/api/posts?username=${username}`);
+    console.log('got', response)
     return response.data;
   }
   catch (err) {
@@ -21,7 +23,7 @@ interface postFormData {
 
 export const addPost = async (body: postFormData) => {
   try {
-    const response = await axios.post('/api/', body);
+    const response = await axios.post('/api/posts', body);
     return response.data;
   }
   catch (err) {
@@ -36,7 +38,7 @@ export const addPost = async (body: postFormData) => {
 export const deletePost = async (postID: number) => {
   // doesn't work yet
   try {
-    const response = await axios.delete(`/api/${postID}`);
+    const response = await axios.delete(`/api/posts/${postID}`);
     return response.data;
   }catch(err) {
     console.log('Error in deletePost: ', err);
@@ -46,7 +48,7 @@ export const addReaction = async (postID: number) => {
   // doesn't work yet
   try {
     const body = {postID};
-    const response = await axios.post('/', body);
+    const response = await axios.post('/api/posts/', body);
     return response.data;
   }
   catch (err) {
