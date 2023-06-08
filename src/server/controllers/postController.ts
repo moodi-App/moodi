@@ -39,7 +39,21 @@ export const getFeed = (req: Request, res: Response, next: NextFunction): void =
   
   console.log('getting feed!')
   const username = req.query.username as string;
-  const queryString: string = 'SELECT a.* FROM posts a INNER JOIN (SELECT target_id FROM public.follows WHERE follower_id = ( SELECT id from public.accounts WHERE username = $1 )) b ON a.account_id = b.target_id;';
+  const queryString: string = `
+    SELECT a.* 
+    FROM posts a 
+    INNER JOIN (
+                SELECT id AS target_id
+                FROM accounts 
+                WHERE username = $1
+                UNION
+                SELECT target_id 
+                FROM public.follows WHERE follower_id = (
+                  SELECT id FROM public.accounts
+                    WHERE username = $1
+                )) b
+    ON a.account_id = b.target_id;
+  `;
 
   query(queryString, [username], (err: Error, results: any) =>{
     if(err) {

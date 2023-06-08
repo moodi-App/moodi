@@ -4,7 +4,7 @@ dotenv.config();
 import pg from 'pg';
 const Pool = pg.Pool;
 
-const PG_URI = process.env.NODE_ENV === 'development'
+const PG_URI = process.env.NODE_ENV === 'test'
   ? process.env.PG_TEST_URI
   : process.env.PG_URI;
   // console.log('Node env is', process.env.NODE_ENV);
