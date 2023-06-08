@@ -22,7 +22,6 @@ export default function Feed(){
   useEffect(()=> {
     getPostList(username)
       .then((list) =>{
-        console.log("FEED LIST IS ", list)
         if(list) setPosts(list)
       })
   }, [])

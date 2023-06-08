@@ -5,13 +5,14 @@ export const createPost = (req: Request, res: Response, next: NextFunction): voi
 
   const { username, emoji, rating, journal } = req.body;
 
-  const queryString: string = 'INSERT INTO posts account_id, emoji, rating, journal) VALUES ( (SELECT id FROM public.accounts WHERE (username = $1), $2, $3, $4);';
+  const queryString: string = 'INSERT INTO posts (account_id, emoji, rating, journal) VALUES ( (SELECT id FROM public.accounts WHERE (username = $1)), $2, $3, $4);';
 
   query(queryString, [username, emoji, rating, journal], (err: Error, results: any) =>{
     if(err) {
       next({message: 'Error in createPost', error: err});
       return;
     };
+    console.log("post made!!")
     res.locals.success = 'You have made a post';
     return next();
   })
