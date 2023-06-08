@@ -4,11 +4,8 @@ import process from 'process';
 import apiRouter from './routers/apiRouter.js'
 
 const app = express();
-
 app.use(express.json());
-
 app.use('/api', apiRouter);
-
 if (process.env.NODE_ENV === 'test') {
     console.log('process.env.NODE_ENV', process.env.NODE_ENV);
     app.use('/broken', (req: Request, res: Response, next: NextFunction): void => {

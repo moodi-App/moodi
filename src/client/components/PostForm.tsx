@@ -20,8 +20,8 @@ export default function PostForm(){
       scale: scaleInput.current?.value,
       text: textInput.current?.value
     }
-    addPost(body)
     console.log("adding post with body of", body)
+    addPost(body)
   }
   return(
     <div>

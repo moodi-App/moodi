@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { query } from '../model.js';
 
 export const getAllFollows = (req: Request, res: Response, next: NextFunction): void => {
+  console.log('querying followlist!')
   const queryString = `
   SELECT username, email, avatar FROM
   (SELECT target_id, username follower FROM

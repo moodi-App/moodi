@@ -11,9 +11,17 @@ export const getPostList = async (username: string): Promise<postData[] | undefi
   }
 }
 
+
+interface postFormData {
+  username: string,
+  emoji: number,
+  scale: number,
+  text: string,
+}
+
 export const addPost = async (body: postFormData) => {
   try {
-    const response = await axios.post('/', body);
+    const response = await axios.post('/api/', body);
     return response.data;
   }
   catch (err) {
@@ -26,6 +34,7 @@ export const addPost = async (body: postFormData) => {
 // }
 
 export const deletePost = async (postID: number) => {
+  // doesn't work yet
   try {
     const response = await axios.delete(`/api/${postID}`);
     return response.data;
@@ -46,7 +55,9 @@ export const addReaction = async (postID: number) => {
 }
 export const getFollowList = async (username: string) => {
   try {
+    console.log('getting follow list')
     const response = await axios.get(`/api/follows?username=${username}`);
+    console.log('follow list:', response.data)
     return response.data;
   }
   catch (err) { console.log('Error in getFollowList: ', err);
