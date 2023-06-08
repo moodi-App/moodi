@@ -17,8 +17,8 @@ export default function PostForm(){
     const body: postFormData = {
       username, 
       emoji: selection, 
-      scale: scaleInput.current?.value,
-      text: textInput.current?.value
+      rating: scaleInput.current?.value,
+      journal: textInput.current?.value
     }
     console.log("adding post with body of", body)
     addPost(body)

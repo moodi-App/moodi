@@ -13,14 +13,6 @@ export const getPostList = async (username: string): Promise<postData[] | undefi
   }
 }
 
-
-interface postFormData {
-  username: string,
-  emoji: number,
-  scale: number,
-  text: string,
-}
-
 export const addPost = async (body: postFormData) => {
   try {
     const response = await axios.post('/api/posts', body);
