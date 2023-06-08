@@ -46,6 +46,7 @@ export const getFeed = (req: Request, res: Response, next: NextFunction): void =
       return;
     };
     res.locals.feed = results.rows;
+    console.log('feed results', res.locals.feed)
     return next();
   });
 };

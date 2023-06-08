@@ -8,6 +8,8 @@ const PG_URI = process.env.NODE_ENV === 'development'
   ? process.env.PG_TEST_URI
   : process.env.PG_URI;
 
+  console.log('Node env is', process.env.NODE_ENV);
+  console.log('connected to', PG_URI)
 const pool = new Pool({
   connectionString: PG_URI,
 });
