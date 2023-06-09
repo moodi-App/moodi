@@ -12,18 +12,18 @@ interface followFormData {
 interface postFormData {
   username: string,
   emoji: number,
-  scale: number,
-  text: string,
+  rating: number,
+  journal: string,
 }
 
 interface postData {
   username: string,
   user_img: string,
   emoji: number,
-  scale: number,
-  text: string,
-  timestamp: string,
-  reaction: number
+  rating: number,
+  journal: string,
+  created_at: string,
+  reaction_count: number
 }
 
 interface followData{

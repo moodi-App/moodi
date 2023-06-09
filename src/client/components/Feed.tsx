@@ -11,25 +11,28 @@ export default function Feed(){
     username: 'Eric',
     user_img: 'https://trello.com/1/cards/647eaaf3e02c15a37fa00a77/attachments/647f67fbbac5b0e7ef6e1c29/previews/647f67fcbac5b0e7ef6e1cb1/download/Mooder-round.png',
     emoji: 4,
-    scale: 5,
-    text: 'The cat meowed softly, seeking warmth.',
-    timestamp: '10am',
-    reaction: 2
+    rating: 5,
+    journal: 'The cat meowed softly, seeking warmth.',
+    created_at: '10am',
+    reaction_count: 2
   }
 
-  const [postss, setPosts] = useState<postData[]>([sample_post]);
+  const [posts, setPosts] = useState<postData[]>([sample_post]);
   const {username} = useContext(UserContext);
   useEffect(()=> {
     getPostList(username)
       .then((list) =>{
         if(list) setPosts(list)
       })
-  })
+  }, [])
   
   return(
     <div id="feed">
       <PostForm/>
-      <PostCard {...sample_post}/>
+      {posts.map((postProps, i) => (
+        <PostCard key={i} {...postProps}/>
+      ))}
+      
     </div>
   )
 }
